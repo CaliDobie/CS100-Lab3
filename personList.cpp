@@ -12,7 +12,11 @@ PersonList::PersonList(){
 }
 
 PersonList::~PersonList(){
-    delete [] theList;
+    for(unsigned int i = 0; i < numPeople; i++)//new
+    {//new
+        delete theList[i];//new
+    }//new
+    delete[] theList;
 }
 
 void PersonList::addPerson(const char* child_name, const char* father_name, const char* mother_name){
